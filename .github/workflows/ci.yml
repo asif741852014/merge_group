@@ -1,0 +1,25 @@
+name: Handle Merge Group
+
+on:
+  merge_group:
+
+jobs:
+  test-merge-group:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Tests
+        run: |
+          echo "Testing merge group..."
+          # Simulate a test run
+          echo "All tests passed!"
+
+      - name: Log Merge Group Details
+        run: |
+          echo "A merge group has been created and is being tested."
+          echo "Head SHA: ${{ github.event.merge_group.head_sha }}"
+          echo "Base SHA: ${{ github.event.merge_group.base_sha }}"
+          echo "Testing PRs together as a merge group."
