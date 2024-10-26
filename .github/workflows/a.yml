@@ -1,0 +1,9 @@
+name: Simple Check
+
+on: [pull_request]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This is a simple check"
